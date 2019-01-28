@@ -10,15 +10,21 @@ class Tasks extends Component {
       { id: 4, task: "Task 4" }
     ]
   };
+
   render() {
     return (
       <div>
-        {this.state.tasks.map(t => (
-          <Task key={t.id} task={t.task} />
+        {this.state.tasks.map(task => (
+          <Task key={task.id} task={task} onDone={this.handleDone} />
         ))}
       </div>
     );
   }
+
+  handleDone = id => {
+    const tasks = this.state.tasks.filter(t => t.id != id);
+    this.setState({ tasks });
+  };
 }
 
 export default Tasks;

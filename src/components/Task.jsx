@@ -5,7 +5,7 @@ class Task extends Component {
   render() {
     return (
       <div className="m-3">
-        <span className="m-2">task</span>
+        <span className="m-2">{this.props.task}</span>
         <button className="btn btn-outline-primary btn-sm">Done</button>
       </div>
     );

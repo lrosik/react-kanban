@@ -1,8 +1,16 @@
 import React, { Component } from "react";
+import Task from "./components/Task";
 
 class App extends Component {
   render() {
-    return <h1>Hello World!</h1>;
+    return (
+      <React.Fragment>
+        <Task />
+        <Task />
+        <Task />
+        <Task />
+      </React.Fragment>
+    );
   }
 }
 

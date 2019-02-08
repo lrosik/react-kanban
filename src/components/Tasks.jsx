@@ -23,6 +23,7 @@ class Tasks extends Component {
           type="text"
           value={this.state.newTask}
           onChange={e => this.handleAddInput(e)}
+          onKeyUp={e => this.keyPressed(e)}
         />
         <button
           className="btn btn-primary m-2"
@@ -46,12 +47,19 @@ class Tasks extends Component {
     this.setState({ newTask: e.target.value });
   };
 
+  keyPressed = e => {
+    if (e.keyCode === 13) this.handleAdd();
+  };
+
   handleAdd() {
+    if (this.state.newTask === "") return;
+
     const newId = this.findMaxId(this.state.tasks) + 1;
-    const newTask = { id: newId, task: this.state.newTask };
-    this.setState(pState => ({
-      tasks: [...pState.tasks, newTask]
+    let newTask = { id: newId, task: this.state.newTask };
+    this.setState(prevState => ({
+      tasks: [...prevState.tasks, newTask]
     }));
+    this.setState({ newTask: "" });
   }
 
   findMaxId(tasks) {

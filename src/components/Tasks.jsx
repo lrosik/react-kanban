@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Task from "./Task";
+import "../styles/tasks.css";
 
 class Tasks extends Component {
   state = {
@@ -14,10 +15,11 @@ class Tasks extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Tasks">
+        <h1 className="m-2">Tasks list title</h1>
         <input
           placeholder="Task name"
-          className="form-control m-2 w-25"
+          className="form-control m-2"
           type="text"
           value={this.state.newTask}
           onChange={e => this.handleAddInput(e)}
@@ -53,6 +55,8 @@ class Tasks extends Component {
   }
 
   findMaxId(tasks) {
+    if (!tasks[0]) return 0;
+
     let max = tasks[0].id;
 
     tasks.forEach(element => {

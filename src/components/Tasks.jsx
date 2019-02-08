@@ -16,17 +16,17 @@ class Tasks extends Component {
   render() {
     return (
       <div className="Tasks">
-        <h1 className="m-2">Tasks list title</h1>
+        <h1>Tasks list title</h1>
         <input
           placeholder="Task name"
-          className="form-control m-2"
+          className="form-control"
           type="text"
           value={this.state.newTask}
           onChange={e => this.handleAddInput(e)}
           onKeyUp={e => this.keyPressed(e)}
         />
         <button
-          className="btn btn-primary m-2"
+          className="btn btn-primary mt-2"
           onClick={() => this.handleAdd()}
         >
           Add

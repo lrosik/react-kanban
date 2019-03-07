@@ -15,8 +15,8 @@ class Tasks extends Component {
 
   render() {
     return (
-      <div className="Tasks">
-        <h1>Tasks list title</h1>
+      <div className="card Tasks p-2">
+        <h3>Tasks list title</h3>
         <input
           placeholder="Task name"
           className="form-control"

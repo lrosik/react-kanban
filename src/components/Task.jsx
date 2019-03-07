@@ -5,7 +5,7 @@ class Task extends Component {
     const { task, onDone } = this.props;
 
     return (
-      <div className="card">
+      <div className="card m-2">
         <div className="card-body">
           <h5 className="card-title">{task.task}</h5>
           <p className="card-text">
